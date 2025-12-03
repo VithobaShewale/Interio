@@ -1,0 +1,297 @@
+{
+  "categories": [
+    {
+      "id": "seating",
+      "name": "Seating",
+      "icon": "chair",
+      "itemCount": 8
+    },
+    {
+      "id": "tables",
+      "name": "Tables",
+      "icon": "table",
+      "itemCount": 5
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "icon": "cabinet",
+      "itemCount": 6
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "icon": "bed",
+      "itemCount": 4
+    },
+    {
+      "id": "lighting",
+      "name": "Lighting",
+      "icon": "lightbulb",
+      "itemCount": 3
+    },
+    {
+      "id": "decor",
+      "name": "Decor",
+      "icon": "frame",
+      "itemCount": 4
+    }
+  ],
+  "items": [
+    {
+      "id": "cb-moore",
+      "name": "Moore Sofa",
+      "category": "seating",
+      "model": "models/js/cb-moore_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_moore-60-media-console-1.jpg",
+      "dimensions": {
+        "width": 203,
+        "height": 86,
+        "depth": 94
+      },
+      "price": 1299,
+      "material": "Fabric",
+      "tags": ["sofa", "modern", "comfortable"]
+    },
+    {
+      "id": "gus-churchchair",
+      "name": "Church Chair",
+      "category": "seating",
+      "model": "models/js/gus-churchchair-whiteoak.js",
+      "thumbnail": "models/thumbnails/thumbnail_Church-Chair-oak-white_1024x1024.jpg",
+      "dimensions": {
+        "width": 55,
+        "height": 82,
+        "depth": 58
+      },
+      "price": 349,
+      "material": "Oak Wood",
+      "tags": ["chair", "wooden", "modern"]
+    },
+    {
+      "id": "cb-rochelle",
+      "name": "Rochelle Dining Chair",
+      "category": "seating",
+      "model": "models/js/cb-rochelle-gray_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_rochelle-sofa-3.jpg",
+      "dimensions": {
+        "width": 46,
+        "height": 89,
+        "depth": 53
+      },
+      "price": 199,
+      "material": "Upholstered",
+      "tags": ["chair", "dining", "gray"]
+    },
+    {
+      "id": "cb-scholartable",
+      "name": "Scholar Desk",
+      "category": "tables",
+      "model": "models/js/cb-scholartable_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_scholar-dining-table.jpg",
+      "dimensions": {
+        "width": 122,
+        "height": 76,
+        "depth": 61
+      },
+      "price": 599,
+      "material": "Wood",
+      "tags": ["desk", "workspace", "modern"]
+    },
+    {
+      "id": "blake-table",
+      "name": "Joshua Tree Chef Table",
+      "category": "tables",
+      "model": "models/js/BlakeAvenuejoshuatreecheftable.js",
+      "thumbnail": "models/thumbnails/thumbnail_scholar-dining-table.jpg",
+      "dimensions": {
+        "width": 183,
+        "height": 91,
+        "depth": 91
+      },
+      "price": 1899,
+      "material": "Solid Wood",
+      "tags": ["dining table", "large", "rustic"]
+    },
+    {
+      "id": "ik-stockholm-coffee",
+      "name": "Stockholm Coffee Table",
+      "category": "tables",
+      "model": "models/js/ik-stockholmcoffee-brown.js",
+      "thumbnail": "models/thumbnails/thumbnail_img21o.jpg",
+      "dimensions": {
+        "width": 180,
+        "height": 42,
+        "depth": 59
+      },
+      "price": 299,
+      "material": "Walnut Veneer",
+      "tags": ["coffee table", "modern", "scandinavian"]
+    },
+    {
+      "id": "gus-ossington",
+      "name": "Ossington End Table",
+      "category": "tables",
+      "model": "models/js/GUSossingtonendtable.js",
+      "thumbnail": "models/thumbnails/thumbnail_img21o.jpg",
+      "dimensions": {
+        "width": 46,
+        "height": 56,
+        "depth": 46
+      },
+      "price": 329,
+      "material": "Oak",
+      "tags": ["side table", "modern", "minimal"]
+    },
+    {
+      "id": "cb-kendall-bookcase",
+      "name": "Kendall Bookcase",
+      "category": "storage",
+      "model": "models/js/cb-kendallbookcasewalnut_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_kendall-walnut-bookcase.jpg",
+      "dimensions": {
+        "width": 91,
+        "height": 229,
+        "depth": 36
+      },
+      "price": 799,
+      "material": "Walnut",
+      "tags": ["bookcase", "storage", "tall"]
+    },
+    {
+      "id": "we-narrow6white",
+      "name": "Narrow 6-Drawer Dresser",
+      "category": "storage",
+      "model": "models/js/we-narrow6white_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_img25o.jpg",
+      "dimensions": {
+        "width": 76,
+        "height": 147,
+        "depth": 46
+      },
+      "price": 549,
+      "material": "Painted Wood",
+      "tags": ["dresser", "storage", "white"]
+    },
+    {
+      "id": "dwr-matera-dresser",
+      "name": "Matera Dresser",
+      "category": "storage",
+      "model": "models/js/DWR_MATERA_DRESSER2.js",
+      "thumbnail": "models/thumbnails/thumbnail_matera_dresser_5.png",
+      "dimensions": {
+        "width": 183,
+        "height": 76,
+        "depth": 51
+      },
+      "price": 1299,
+      "material": "Walnut",
+      "tags": ["dresser", "modern", "wide"]
+    },
+    {
+      "id": "bd-shale-bedside",
+      "name": "Shale Bedside Table",
+      "category": "bedroom",
+      "model": "models/js/bd-shalebedside-smoke_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg",
+      "dimensions": {
+        "width": 56,
+        "height": 61,
+        "depth": 46
+      },
+      "price": 399,
+      "material": "Wood",
+      "tags": ["nightstand", "bedroom", "modern"]
+    },
+    {
+      "id": "ik-nordli-bed",
+      "name": "Nordli Bed Frame",
+      "category": "bedroom",
+      "model": "models/js/ik_nordli_full.js",
+      "thumbnail": "models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg",
+      "dimensions": {
+        "width": 193,
+        "height": 83,
+        "depth": 211
+      },
+      "price": 499,
+      "material": "Particleboard",
+      "tags": ["bed", "storage", "modern"]
+    },
+    {
+      "id": "ik-ekero-blue",
+      "name": "Ekerö Armchair Blue",
+      "category": "seating",
+      "model": "models/js/ik-ekero-blue_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_ekero-blue3.png",
+      "dimensions": {
+        "width": 70,
+        "height": 85,
+        "depth": 87
+      },
+      "price": 279,
+      "material": "Fabric",
+      "tags": ["armchair", "blue", "comfortable"]
+    },
+    {
+      "id": "ik-ekero-orange",
+      "name": "Ekerö Armchair Orange",
+      "category": "seating",
+      "model": "models/js/ik-ekero-orange_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_tn-orange.png",
+      "dimensions": {
+        "width": 70,
+        "height": 85,
+        "depth": 87
+      },
+      "price": 279,
+      "material": "Fabric",
+      "tags": ["armchair", "orange", "comfortable"]
+    },
+    {
+      "id": "cb-arch-lamp",
+      "name": "Arch Floor Lamp",
+      "category": "lighting",
+      "model": "models/js/cb-archnight-white_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg",
+      "dimensions": {
+        "width": 122,
+        "height": 203,
+        "depth": 30
+      },
+      "price": 399,
+      "material": "Metal",
+      "tags": ["lamp", "floor lamp", "modern"]
+    },
+    {
+      "id": "nyc-poster",
+      "name": "NYC Poster",
+      "category": "decor",
+      "model": "models/js/nyc-poster2.js",
+      "thumbnail": "models/thumbnails/thumbnail_nyc2.jpg",
+      "dimensions": {
+        "width": 61,
+        "height": 91,
+        "depth": 2
+      },
+      "price": 49,
+      "material": "Paper",
+      "tags": ["wall art", "poster", "nyc"]
+    },
+    {
+      "id": "ore-3leg-table",
+      "name": "3-Legged Side Table",
+      "category": "tables",
+      "model": "models/js/ore-3legged-white_baked.js",
+      "thumbnail": "models/thumbnails/thumbnail_ore-white.png",
+      "dimensions": {
+        "width": 46,
+        "height": 56,
+        "depth": 46
+      },
+      "price": 199,
+      "material": "Wood",
+      "tags": ["side table", "modern", "white"]
+    }
+  ]
+}

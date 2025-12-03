@@ -3,6 +3,18 @@
 /// <reference path="../core/utils.ts" />
 
 module BP3D.Three {
+  // Flag to temporarily disable auto-visibility updates (e.g., for elevation rendering)
+  var disableAutoVisibility = false;
+  
+  // Public functions to control auto-visibility
+  export var setEdgeAutoVisibility = function(enabled: boolean) {
+    disableAutoVisibility = !enabled;
+  };
+  
+  export var getEdgeAutoVisibility = function() {
+    return !disableAutoVisibility;
+  };
+  
   export var Edge = function (scene, edge, controls) {
     var scope = this;
     var scene = scene;
@@ -16,11 +28,14 @@ module BP3D.Three {
     var texture = null;
 
     var lightMap = THREE.ImageUtils.loadTexture("rooms/textures/walllightmap.png");
+    lightMap.minFilter = THREE.LinearFilter; // Prevent errors if texture not loaded
     var fillerColor = 0xdddddd;
     var sideColor = 0xcccccc;
     var baseColor = 0xdddddd;
 
     this.visible = false;
+    this.planes = planes;
+    this.basePlanes = basePlanes;
 
     this.remove = function () {
       edge.redrawCallbacks.remove(redraw);
@@ -65,6 +80,11 @@ module BP3D.Three {
     }
 
     function updateVisibility() {
+      // Skip auto-visibility if disabled (e.g., during elevation rendering)
+      if (disableAutoVisibility) {
+        return;
+      }
+      
       // finds the normal from the specified edge
       var start = edge.interiorStart();
       var end = edge.interiorEnd();
@@ -114,14 +134,29 @@ module BP3D.Three {
       var stretch = textureData.stretch;
       var url = textureData.url;
       var scale = textureData.scale;
-      texture = THREE.ImageUtils.loadTexture(url, null, callback);
+      
+      // Create texture with error handling
+      texture = THREE.ImageUtils.loadTexture(url, null, function() {
+        // Texture loaded successfully
+        if (texture && texture.image) {
+          texture.needsUpdate = true;
+          callback();
+        }
+      }, function() {
+        // Texture failed to load - use fallback
+        console.warn('Failed to load texture:', url);
+        callback();
+      });
+      
+      // Prevent rendering errors before texture loads
+      texture.minFilter = THREE.LinearFilter;
+      
       if (!stretch) {
         var height = wall.height;
         var width = edge.interiorDistance();
         texture.wrapT = THREE.RepeatWrapping;
         texture.wrapS = THREE.RepeatWrapping;
         texture.repeat.set(width / scale, height / scale);
-        texture.needsUpdate = true;
       }
     }
 

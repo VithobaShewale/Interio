@@ -16,6 +16,7 @@ module BP3D.Three {
 
     floorplan.fireOnUpdatedRooms(redraw);
 
+    
     function redraw() {
       // clear scene
       scope.floors.forEach((floor) => {

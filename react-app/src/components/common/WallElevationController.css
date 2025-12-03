@@ -1,0 +1,118 @@
+.wall-elevation-controller {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.wall-control-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.wall-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.wall-label {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.wall-control-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.wall-control-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.wall-control-btn.active .wall-label {
+  color: white;
+}
+
+/* Export Menu */
+.wall-export-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  padding: 6px;
+  animation: slideUpFade 0.2s ease-out;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.export-menu-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px 6px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+}
+
+.export-menu-item {
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  text-align: left;
+  transition: all 0.15s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.export-menu-item:hover {
+  background-color: #f3f4f6;
+  color: #667eea;
+}
+
+.export-menu-item:active {
+  background-color: #e5e7eb;
+}
+
+.export-res {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 400;
+}

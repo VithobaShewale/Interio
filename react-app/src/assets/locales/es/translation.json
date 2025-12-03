@@ -1,0 +1,163 @@
+{
+  "common": {
+    "app_name": "Blueprint3D",
+    "save": "Guardar",
+    "load": "Cargar",
+    "export": "Exportar",
+    "import": "Importar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "apply": "Aplicar",
+    "reset": "Restablecer",
+    "undo": "Deshacer",
+    "redo": "Rehacer",
+    "new": "Nuevo",
+    "open": "Abrir",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "login": "Iniciar Sesión"
+  },
+  "toolbar": {
+    "new_design": "Nuevo Diseño",
+    "save_design": "Guardar Diseño",
+    "load_design": "Cargar Diseño",
+    "undo": "Deshacer",
+    "redo": "Rehacer",
+    "view_2d": "Vista 2D",
+    "view_3d": "Vista 3D",
+    "view_wall": "Vista de Pared",
+    "design_notes": "Notas de Diseño",
+    "design_assistance": "Asistencia de Diseño"
+  },
+  "sidebar": {
+    "items": "Elementos",
+    "properties": "Propiedades",
+    "catalog": "Catálogo",
+    "selected": "Seleccionado",
+    "floorPlan": "Plano de Planta",
+    "autoDesign": "Mediciones",
+    "view": "Vista"
+  },
+  "floorplanner": {
+    "title": "Planificador de Planta",
+    "mode_move": "Mover",
+    "mode_draw": "Dibujar",
+    "mode_delete": "Eliminar",
+    "draw_walls": "Dibujar Paredes",
+    "move_walls": "Mover Paredes",
+    "move_items": "Mover Elementos",
+    "delete_walls": "Eliminar Paredes",
+    "toggle_dimensions": "Alternar Dimensiones",
+    "show_dimensions": "Mostrar Dimensiones",
+    "hide_dimensions": "Ocultar Dimensiones",
+    "draw_hint": "Presione \"ESC\" para dejar de dibujar paredes",
+    "zoom_in": "Acercar",
+    "zoom_out": "Alejar",
+    "reset_view": "Restablecer Vista",
+    "pan_up": "Desplazar Arriba",
+    "pan_down": "Desplazar Abajo",
+    "pan_left": "Desplazar Izquierda",
+    "pan_right": "Desplazar Derecha",
+    "camera": "Cámara"
+  },
+  "viewer": {
+    "help": "Ayuda",
+    "wall_view": "Vista de Pared",
+    "exit_wall_view": "Salir de Vista de Pared",
+    "view_wall_elevations": "Ver Elevaciones de Pared"
+  },
+  "properties": {
+    "wall": {
+      "title": "Revestimientos de Pared",
+      "no_selection": "Ninguna pared seleccionada",
+      "no_selection_hint": "Haga clic en una pared en la vista 3D para cambiar su textura",
+      "covering_type": "Tipo de Revestimiento",
+      "types": {
+        "wallpaper": "Papel Pintado",
+        "paint": "Pintura",
+        "tile": "Azulejo"
+      }
+    },
+    "floor": {
+      "title": "Revestimientos de Suelo",
+      "no_selection": "Ningún suelo seleccionado",
+      "no_selection_hint": "Haga clic en un suelo en la vista 3D para cambiar su textura",
+      "covering_type": "Tipo de Revestimiento",
+      "types": {
+        "hardwood": "Madera Dura",
+        "laminate": "Laminado",
+        "tile": "Azulejo",
+        "carpet": "Alfombra"
+      }
+    }
+  },
+  "catalog": {
+    "title": "Catálogo de Muebles",
+    "search": "Buscar elementos..."
+  },
+  "import_export": {
+    "title": "Importar/Exportar Diseño",
+    "new_hint": "Comenzar con una habitación vacía",
+    "import": {
+      "title": "Importar Diseño",
+      "button": "Importar",
+      "hint": "Cargar un diseño desde un archivo JSON",
+      "success": "Diseño importado exitosamente",
+      "error": "Error al importar diseño"
+    },
+    "export": {
+      "title": "Exportar Diseño",
+      "button": "Exportar",
+      "copy_button": "Copiar al Portapapeles",
+      "download_button": "Descargar JSON",
+      "download_glb_button": "Descargar Modelo 3D (GLB)",
+      "hint": "Guardar su diseño como JSON o modelo 3D",
+      "glb_hint": "Exportar como GLB para usar en otras aplicaciones 3D",
+      "success": "Diseño copiado al portapapeles",
+      "error": "Error al exportar diseño",
+      "glb_success": "Modelo 3D exportado exitosamente",
+      "glb_error": "Error al exportar modelo 3D"
+    }
+  },
+  "measurements": {
+    "title": "Mediciones",
+    "clickFirstPoint": "Haz clic en el primer punto para comenzar a medir",
+    "clickSecondPoint": "Haz clic en el segundo punto para completar la medición",
+    "measurementCount_one": "medición",
+    "measurementCount_other": "mediciones",
+    "clearAll": "Borrar Todo",
+    "room": "Habitación",
+    "areaCalculation": "Cálculo de Área",
+    "metric": "Métrico",
+    "imperial": "Imperial",
+    "refresh": "Actualizar Mediciones",
+    "noRooms": "No hay habitaciones disponibles. Dibuja paredes para crear habitaciones.",
+    "floorArea": "Área de Suelo",
+    "perimeter": "Perímetro",
+    "wallArea": "Área de Pared",
+    "totals": "Totales",
+    "totalFloorArea": "Área Total de Suelo",
+    "totalWallArea": "Área Total de Pared",
+    "exportCSV": "Exportar CSV",
+    "exportJSON": "Exportar JSON",
+    "distance": "Distancia",
+    "measureTool": "Herramienta de Medición",
+    "activateMeasure": "Haz clic para medir distancias",
+    "wallLength": "Longitud de Pared",
+    "roomName": "Nombre de Habitación",
+    "hoverForDetails": "Pasar el cursor para detalles"
+  },
+  "messages": {
+    "design_saved": "Diseño guardado exitosamente",
+    "design_loaded": "Diseño cargado exitosamente",
+    "item_added": "Elemento agregado a la escena",
+    "item_deleted": "Elemento eliminado de la escena",
+    "error_loading": "Error al cargar diseño",
+    "error_saving": "Error al guardar diseño",
+    "confirm_delete": "¿Está seguro de que desea eliminar este elemento?",
+    "confirm_new": "¿Crear nuevo diseño? Los cambios no guardados se perderán.",
+    "unsaved_changes": "Tiene cambios no guardados"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "common": {
+    "app_name": "Blueprint3D",
+    "save": "Save",
+    "load": "Load",
+    "export": "Export",
+    "import": "Import",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "apply": "Apply",
+    "reset": "Reset",
+    "undo": "Undo",
+    "redo": "Redo",
+    "new": "New",
+    "open": "Open",
+    "settings": "Settings",
+    "help": "Help",
+    "login": "Login"
+  },
+  "toolbar": {
+    "new_design": "New Design",
+    "save_design": "Save Design",
+    "load_design": "Load Design",
+    "undo": "Undo",
+    "redo": "Redo",
+    "view_2d": "2D View",
+    "view_3d": "3D View",
+    "view_wall": "Wall View",
+    "design_notes": "Design Notes",
+    "design_assistance": "Design Assistance"
+  },
+  "sidebar": {
+    "items": "Items",
+    "properties": "Properties",
+    "catalog": "Catalog",
+    "selected": "Selected",
+    "floorPlan": "Floor Plan",
+    "autoDesign": "Measurements",
+    "view": "View"
+  },
+  "floorplanner": {
+    "title": "Floor Planner",
+    "mode_move": "Move",
+    "mode_draw": "Draw",
+    "mode_delete": "Delete",
+    "draw_walls": "Draw Walls",
+    "move_walls": "Move Walls",
+    "move_items": "Move Items",
+    "delete_walls": "Delete Walls",
+    "toggle_dimensions": "Toggle Dimensions",
+    "show_dimensions": "Show Dimensions",
+    "hide_dimensions": "Hide Dimensions",
+    "draw_hint": "Press \"ESC\" to stop drawing walls",
+    "zoom_in": "Zoom In",
+    "zoom_out": "Zoom Out",
+    "reset_view": "Reset View",
+    "pan_up": "Pan Up",
+    "pan_down": "Pan Down",
+    "pan_left": "Pan Left",
+    "pan_right": "Pan Right",
+    "camera": "Camera"
+  },
+  "viewer": {
+    "help": "Help",
+    "wall_view": "Wall View",
+    "exit_wall_view": "Exit Wall View",
+    "view_wall_elevations": "View Wall Elevations"
+  },
+  "properties": {
+    "wall": {
+      "title": "Wall Coverings",
+      "no_selection": "No wall selected",
+      "no_selection_hint": "Click on a wall in the 3D view to change its texture",
+      "covering_type": "Covering Type",
+      "rotation": "Rotation",
+      "current_covering": "Covering",
+      "types": {
+        "wallpaper": "Wallpaper",
+        "paint": "Paint",
+        "tile": "Tile"
+      }
+    },
+    "floor": {
+      "title": "Floor Coverings",
+      "no_selection": "No floor selected",
+      "no_selection_hint": "Click on a floor in the 3D view to change its texture",
+      "covering_type": "Covering Type",
+      "rotation": "Rotation",
+      "current_covering": "Covering",
+      "types": {
+        "hardwood": "Hardwood",
+        "laminate": "Laminate",
+        "tile": "Tile",
+        "carpet": "Carpet"
+      }
+    },
+    "item": {
+      "title": "Item Properties",
+      "no_selection": "No item selected",
+      "no_selection_hint": "Click on an item in the 3D view to see its properties",
+      "position": "Position",
+      "rotation": "Rotation",
+      "scale": "Scale",
+      "delete": "Delete Item",
+      "dimensions": "Dimensions",
+      "width": "Width",
+      "height": "Height",
+      "depth": "Depth"
+    }
+  },
+  "catalog": {
+    "title": "Furniture Catalog",
+    "search": "Search items...",
+    "no_results": "No items found matching \"{{searchTerm}}\"",
+    "categories": {
+      "all": "All Items",
+      "furniture": "Furniture",
+      "seating": "Seating",
+      "tables": "Tables",
+      "storage": "Storage",
+      "lighting": "Lighting",
+      "decoration": "Decoration"
+    },
+    "add_to_scene": "Add to Scene",
+    "drag_to_add": "Drag to add to scene"
+  },
+  "itemlist": {
+    "shopping_list": "Shopping List",
+    "title": "Shopping List",
+    "empty_title": "No Items Added",
+    "empty_message": "Add furniture items to your design to see them here",
+    "export": "Export",
+    "print": "Print",
+    "total_items": "Total Items",
+    "unique_items": "Unique Items",
+    "total_cost": "Total Cost",
+    "subtotal": "Subtotal",
+    "tax": "Tax (estimated)",
+    "grand_total": "Grand Total"
+  },
+  "textures": {
+    "wall": {
+      "brick": "Brick",
+      "yellow_wall": "Yellow Wall",
+      "white_wall": "White Wall",
+      "gray_wall": "Gray Wall",
+      "merbau_wood": "Merbau Wood"
+    },
+    "floor": {
+      "light_wood": "Light Wood",
+      "dark_wood": "Dark Wood",
+      "marble": "Marble",
+      "concrete": "Concrete",
+      "hardwood": "Hardwood"
+    }
+  },
+  "measurements": {
+    "title": "Measurements",
+    "clickFirstPoint": "Click first point to start measuring",
+    "clickSecondPoint": "Click second point to complete measurement",
+    "measurementCount_one": "measurement",
+    "measurementCount_other": "measurements",
+    "clearAll": "Clear All",
+    "room": "Room",
+    "areaCalculation": "Area Calculation",
+    "metric": "Metric",
+    "imperial": "Imperial",
+    "refresh": "Refresh Measurements",
+    "noRooms": "No rooms available. Draw walls to create rooms.",
+    "floorArea": "Floor Area",
+    "perimeter": "Perimeter",
+    "wallArea": "Wall Area",
+    "totals": "Totals",
+    "totalFloorArea": "Total Floor Area",
+    "totalWallArea": "Total Wall Area",
+    "exportCSV": "Export CSV",
+    "exportJSON": "Export JSON",
+    "distance": "Distance",
+    "measureTool": "Measure Tool",
+    "activateMeasure": "Click to measure distances",
+    "wallLength": "Wall Length",
+    "roomName": "Room Name",
+    "hoverForDetails": "Hover for details"
+  },
+  "import_export": {
+    "title": "Import/Export Design",
+    "new_hint": "Start with a blank room",
+    "import": {
+      "title": "Import Design",
+      "button": "Import",
+      "hint": "Load a design from a JSON file",
+      "success": "Design imported successfully",
+      "error": "Failed to import design"
+    },
+    "export": {
+      "title": "Export Design",
+      "button": "Export",
+      "copy_button": "Copy to Clipboard",
+      "download_button": "Download JSON",
+      "download_glb_button": "Download 3D Model (GLB)",
+      "hint": "Save your design as JSON or 3D model",
+      "glb_hint": "Export as GLB for use in other 3D applications",
+      "success": "Design copied to clipboard",
+      "error": "Failed to export design",
+      "glb_success": "3D model exported successfully",
+      "glb_error": "Failed to export 3D model"
+    }
+  },
+  "messages": {
+    "design_saved": "Design saved successfully",
+    "design_loaded": "Design loaded successfully",
+    "design_exported": "Design exported successfully",
+    "design_imported": "Design imported successfully",
+    "item_added": "Item added to scene",
+    "item_deleted": "Item deleted from scene",
+    "texture_applied": "Texture applied successfully",
+    "error_loading": "Error loading design",
+    "error_saving": "Error saving design",
+    "confirm_delete": "Are you sure you want to delete this item?",
+    "confirm_new": "Create new design? Unsaved changes will be lost.",
+    "unsaved_changes": "You have unsaved changes"
+  },
+  "loading": {
+    "initializing": "Initializing Blueprint3D...",
+    "loading_design": "Loading design...",
+    "saving_design": "Saving design...",
+    "loading_items": "Loading furniture items...",
+    "please_wait": "Please wait..."
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "namePlaceholder": "Enter your name",
+    "loggingIn": "Logging in...",
+    "registering": "Creating account...",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "loginError": "Invalid email or password",
+    "registerError": "Failed to create account",
+    "loginSuccess": "Logged in successfully",
+    "registerSuccess": "Account created successfully",
+    "logoutSuccess": "Logged out successfully"
+  }
+}

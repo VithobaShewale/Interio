@@ -38,7 +38,7 @@ module BP3D {
       this.three = new Three.Main(this.model, options.threeElement, options.threeCanvasElement, {});
 
       if (!options.widget) {
-        this.floorplanner = new Floorplanner.Floorplanner(options.floorplannerElement, this.model.floorplan);
+        this.floorplanner = new Floorplanner.Floorplanner(options.floorplannerElement, this.model.floorplan, this.model);
       }
       else {
         this.three.getController().enabled = false;

@@ -29,11 +29,28 @@ module BP3D.Three {
 
     function buildFloor() {
       var textureSettings = scope.room.getTexture();
-      // setup texture
-      var floorTexture = THREE.ImageUtils.loadTexture(textureSettings.url);
+      // setup texture with error handling
+      var floorTexture = THREE.ImageUtils.loadTexture(
+        textureSettings.url,
+        null,
+        function() {
+          // Texture loaded successfully
+          if (floorTexture && floorTexture.image) {
+            floorTexture.needsUpdate = true;
+          }
+        },
+        function() {
+          // Texture failed to load
+          console.warn('Failed to load floor texture:', textureSettings.url);
+        }
+      );
+      
+      // Prevent rendering errors before texture loads
+      floorTexture.minFilter = THREE.LinearFilter;
       floorTexture.wrapS = THREE.RepeatWrapping;
       floorTexture.wrapT = THREE.RepeatWrapping;
       floorTexture.repeat.set(1, 1);
+      
       var floorMaterialTop = new THREE.MeshPhongMaterial({
         map: floorTexture,
         side: THREE.DoubleSide,

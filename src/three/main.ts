@@ -48,6 +48,8 @@ module BP3D.Three {
     var lastRender = Date.now();
     var mouseOver = false;
     var hasClicked = false;
+    var lastInteractionTime = Date.now();
+    var idleSpinDelay = 50000; // 50 seconds
 
     var hud;
 
@@ -107,17 +109,28 @@ module BP3D.Three {
 
       scope.element.mouseenter(function () {
         mouseOver = true;
+        lastInteractionTime = Date.now();
       }).mouseleave(function () {
         mouseOver = false;
       }).click(function () {
         hasClicked = true;
+        lastInteractionTime = Date.now();
+      }).mousemove(function () {
+        lastInteractionTime = Date.now();
+      }).mousedown(function () {
+        lastInteractionTime = Date.now();
+      }).on('wheel', function () {
+        lastInteractionTime = Date.now();
       });
 
       //canvas = new ThreeCanvas(canvasElement, scope);
     }
 
     function spin() {
-      if (options.spin && !mouseOver && !hasClicked) {
+      var timeSinceInteraction = Date.now() - lastInteractionTime;
+      var shouldSpin = options.spin && timeSinceInteraction > idleSpinDelay;
+      
+      if (shouldSpin) {
         var theta = 2 * Math.PI * options.spinSpeed * (Date.now() - lastRender);
         scope.controls.rotateLeft(theta);
         scope.controls.update()
@@ -145,12 +158,24 @@ module BP3D.Three {
       return scene;
     }
 
+    this.getRenderer = function () {
+      return renderer;
+    }
+    
+    this.getSize = function () {
+      return {width: scope.elementWidth, height: scope.elementHeight};
+    }
+    
     this.getController = function () {
       return controller;
     }
 
     this.getCamera = function () {
       return camera;
+    }
+    
+    this.getFloorplan = function () {
+      return floorplan;
     }
 
     this.needsUpdate = function () {

@@ -1,0 +1,353 @@
+/* Circular Navigation Pad */
+.navigation-circle {
+  position: absolute;
+  bottom: 24px;
+  right: 38px;
+  width: 140px;
+  height: 140px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-arrow:hover {
+  background: #f9fafb;
+  color: #4f46e5;
+  transform: scale(1.08);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.nav-up {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-up:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.nav-down {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-down:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.nav-left {
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-left:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav-right {
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-right:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav-center-btn {
+  width: 50px;
+  height: 50px;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 0.2s;
+  z-index: 1;
+}
+
+.nav-center-btn:hover {
+  background: #d1d5db;
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+.nav-center-btn:active {
+  transform: scale(0.95);
+}
+
+/* Reset View Button */
+.reset-view-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 140px;
+  padding: 10px 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.reset-view-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.reset-view-btn:active {
+  transform: translateY(0);
+}
+
+/* Navigate Button */
+.navigate-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 18px;
+  padding: 10px 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.navigate-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.navigate-btn:active {
+  transform: translateY(0);
+}
+
+/* Zoom Slider Container */
+.zoom-slider-container {
+  position: absolute;
+  right: 5px;
+  bottom: 125px;
+  transform: translateY(50%);
+  padding: 6px;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.zoom-slider-track {
+  height: 200px;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zoom-btn {
+  width: 24px;
+  height: 24px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.zoom-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.zoom-btn:hover {
+  background: #e5e7eb;
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.zoom-btn:active {
+  background: #d1d5db;
+  transform: scale(0.95);
+}
+
+.zoom-level-display {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.zoom-steps {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+  flex: 1;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.zoom-step {
+  width: 8px;
+  background: #d1d5db;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  margin: 0 auto;
+}
+
+.zoom-step::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 2px;
+  background: #d1d5db;
+}
+
+.zoom-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 2px;
+  background: #d1d5db;
+}
+
+.zoom-step:hover {
+  background: #9ca3af;
+}
+
+.zoom-step:hover::before,
+.zoom-step:hover::after {
+  background: #9ca3af;
+}
+
+.zoom-step.active {
+  background: #4f46e5;
+  width: 8px;
+}
+
+.zoom-step.active::before,
+.zoom-step.active::after {
+  background: #4f46e5;
+  width: 8px;
+}
+
+.zoom-step.active:hover {
+  background: #6366f1;
+}
+
+.zoom-step.active:hover::before,
+.zoom-step.active:hover::after {
+  background: #6366f1;
+}
+
+/* Close Button */
+.close-nav-btn {
+  position: absolute;
+  bottom: 235px;
+  right: 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 101;
+}
+
+.close-nav-btn:hover {
+  background: #f9fafb;
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.close-nav-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .navigation-circle {
+    width: 120px;
+    height: 120px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-center-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .reset-view-btn {
+    bottom: 16px;
+    right: 150px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}

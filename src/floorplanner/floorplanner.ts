@@ -21,6 +21,9 @@ module BP3D.Floorplanner {
     public activeCorner = null;
 
     /** */
+    public activeItem = null;
+
+    /** */
     public originX = 0;
 
     /** */
@@ -78,11 +81,11 @@ module BP3D.Floorplanner {
     private pixelsPerCm: number;
 
     /** */
-    constructor(canvas: string, private floorplan: Model.Floorplan) {
+    constructor(canvas: string, private floorplan: Model.Floorplan, private model?: Model.Model) {
 
       this.canvasElement = $("#" + canvas);
 
-      this.view = new FloorplannerView(this.floorplan, this, canvas);
+      this.view = new FloorplannerView(this.floorplan, this, canvas, this.model);
 
       var cmPerFoot = 30.48;
       var pixelsPerFoot = 15.0;
@@ -186,6 +189,7 @@ module BP3D.Floorplanner {
       if (this.mode != floorplannerModes.DRAW && !this.mouseDown) {
         var hoverCorner = this.floorplan.overlappedCorner(this.mouseX, this.mouseY);
         var hoverWall = this.floorplan.overlappedWall(this.mouseX, this.mouseY);
+        var hoverItem = this.getItemAt(this.mouseX, this.mouseY);
         var draw = false;
         if (hoverCorner != this.activeCorner) {
           this.activeCorner = hoverCorner;
@@ -200,13 +204,25 @@ module BP3D.Floorplanner {
         } else {
           this.activeWall = null;
         }
+        // item is lowest priority
+        if (this.activeCorner == null && this.activeWall == null) {
+          if (hoverItem != this.activeItem) {
+            this.activeItem = hoverItem;
+            draw = true;
+          }
+        } else {
+          if (this.activeItem != null) {
+            this.activeItem = null;
+            draw = true;
+          }
+        }
         if (draw) {
           this.view.draw();
         }
       }
 
       // panning
-      if (this.mouseDown && !this.activeCorner && !this.activeWall) {
+      if (this.mouseDown && !this.activeCorner && !this.activeWall && !this.activeItem) {
         this.originX += (this.lastX - this.rawMouseX);
         this.originY += (this.lastY - this.rawMouseY);
         this.lastX = this.rawMouseX;
@@ -227,6 +243,16 @@ module BP3D.Floorplanner {
           this.activeWall.snapToAxis(snapTolerance);
           this.lastX = this.rawMouseX;
           this.lastY = this.rawMouseY;
+        } else if (this.activeItem) {
+          // Move item in 3D space with validation
+          if (this.activeItem.position && this.activeItem.isValidPosition) {
+            var newPos = new THREE.Vector3(this.mouseX, this.activeItem.position.y, this.mouseY);
+            // Check if position is valid using item's validation method
+            if (this.activeItem.isValidPosition(newPos)) {
+              this.activeItem.position.x = this.mouseX;
+              this.activeItem.position.z = this.mouseY;
+            }
+          }
         }
         this.view.draw();
       }
@@ -253,6 +279,40 @@ module BP3D.Floorplanner {
     private mouseleave() {
       this.mouseDown = false;
       //scope.setMode(scope.modes.MOVE);
+    }
+
+    /** Check if mouse is over an item */
+    private getItemAt(x: number, y: number): any {
+      if (!this.model || !this.model.scene) return null;
+      
+      try {
+        var items = this.model.scene.getItems();
+        // Check items in reverse order (top to bottom)
+        for (var i = items.length - 1; i >= 0; i--) {
+          var item = items[i];
+          if (!item.position) continue;
+          
+          var itemX = item.position.x;
+          var itemZ = item.position.z;
+          
+          // Get item size using public methods
+          var halfSizeX = 15 * this.cmPerPixel; // default
+          var halfSizeZ = 15 * this.cmPerPixel;
+          if (item.getWidth && item.getDepth) {
+            halfSizeX = item.getWidth() / 2;
+            halfSizeZ = item.getDepth() / 2;
+          }
+          
+          // Check if mouse is within item bounds
+          if (Math.abs(x - itemX) <= halfSizeX && Math.abs(y - itemZ) <= halfSizeZ) {
+            return item;
+          }
+        }
+      } catch (e) {
+        console.warn('Error getting item at position:', e);
+      }
+      
+      return null;
     }
 
     /** */
@@ -293,6 +353,11 @@ module BP3D.Floorplanner {
     /** Convert from THREEjs coords to canvas coords. */
     public convertY(y: number): number {
       return (y - this.originY * this.cmPerPixel) * this.pixelsPerCm;
+    }
+
+    /** Get the pixels per centimeter scale factor */
+    public getPixelsPerCm(): number {
+      return this.pixelsPerCm;
     }
   }
 }

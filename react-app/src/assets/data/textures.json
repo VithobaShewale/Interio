@@ -1,0 +1,134 @@
+{
+  "textures": [
+    {
+      "id": "hardwood-oak",
+      "name": "Oak Hardwood",
+      "type": "floor",
+      "url": "rooms/textures/hardwood.png",
+      "thumbnail": "rooms/thumbnails/thumbnail_hardwood.png",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "price": 89,
+      "material": "Oak Wood"
+    },
+    {
+      "id": "light-brick",
+      "name": "Light Brick",
+      "type": "wall",
+      "url": "rooms/textures/light_brick.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_light_brick.png",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "price": 45,
+      "material": "Brick"
+    },
+    {
+      "id": "marbletiles",
+      "name": "Marble Tiles",
+      "type": "floor",
+      "url": "rooms/textures/marbletiles.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_marbletiles.png",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "price": 129,
+      "material": "Marble"
+    },
+    {
+      "id": "wallmap",
+      "name": "World Map Wall",
+      "type": "wall",
+      "url": "rooms/textures/wallmap.png",
+      "thumbnail": "rooms/thumbnails/thumbnail_wallmap.png",
+      "dimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "price": 199,
+      "material": "Wallpaper"
+    },
+    {
+      "id": "light-fine-wood",
+      "name": "Light Fine Wood",
+      "type": "floor",
+      "url": "rooms/textures/light_fine_wood.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_light_fine_wood.png",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "price": 99,
+      "material": "Pine Wood"
+    },
+    {
+      "id": "white-wall",
+      "name": "Plain White",
+      "type": "wall",
+      "url": "rooms/textures/white.png",
+      "thumbnail": "rooms/thumbnails/thumbnail_white.png",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "price": 25,
+      "material": "Paint"
+    },
+    {
+      "id": "graycarpet",
+      "name": "Gray Carpet",
+      "type": "floor",
+      "url": "rooms/textures/graycarpet.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_graycarpet.png",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "price": 69,
+      "material": "Carpet"
+    },
+    {
+      "id": "darkwood",
+      "name": "Dark Wood Floor",
+      "type": "floor",
+      "url": "rooms/textures/darkwood.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_darkwood.png",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "price": 109,
+      "material": "Dark Wood"
+    },
+    {
+      "id": "concrete",
+      "name": "Concrete",
+      "type": "floor",
+      "url": "rooms/textures/concrete.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_concrete.png",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "price": 79,
+      "material": "Concrete"
+    },
+    {
+      "id": "blue-paint",
+      "name": "Blue Paint",
+      "type": "wall",
+      "url": "rooms/textures/blue_paint.jpg",
+      "thumbnail": "rooms/thumbnails/thumbnail_blue_paint.png",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "price": 35,
+      "material": "Paint"
+    }
+  ]
+}

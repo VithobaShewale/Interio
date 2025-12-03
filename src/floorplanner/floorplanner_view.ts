@@ -7,6 +7,7 @@
 /// <reference path="../model/model.ts" />
 /// <reference path="../model/wall.ts" />
 /// <reference path="floorplanner.ts" />
+/// <reference path="dimension_renderer.ts" />
 
 module BP3D.Floorplanner {
   /** */
@@ -22,16 +23,18 @@ module BP3D.Floorplanner {
   const gridColor = "#f1f1f1";
 
   // room config
-  const roomColor = "#f9f9f9";
+  const roomColor = "#e8dcc4"; // Beige/tan color like architectural drawings
+  const roomLabelColor = "#666666";
+  const roomLabelBgColor = "rgba(255, 255, 255, 0.9)";
 
   // wall config
-  const wallWidth = 5;
-  const wallWidthHover = 7;
-  const wallColor = "#dddddd"
+  const wallWidth = 8;
+  const wallWidthHover = 8;  // Same as wallWidth for consistent edge display
+  const wallColor = "#5a5a5a" // Darker gray for walls
   const wallColorHover = "#008cba"
-  const edgeColor = "#888888"
+  const edgeColor = "#2a2a2a" // Dark gray for wall edges
   const edgeColorHover = "#008cba"
-  const edgeWidth = 1
+  const edgeWidth = 2
 
   const deleteColor = "#ff0000";
 
@@ -40,6 +43,11 @@ module BP3D.Floorplanner {
   const cornerRadiusHover = 7
   const cornerColor = "#cccccc"
   const cornerColorHover = "#008cba"
+
+  // item config
+  const itemColor = "#b0b0b0"; // Light gray for furniture
+  const itemBorderColor = "#404040"; // Dark gray border
+  const itemBorderWidth = 1;
 
   /**
    * The View to be used by a Floorplanner to render in/interact with.
@@ -52,16 +60,41 @@ module BP3D.Floorplanner {
     /** The 2D context. */
     private context;
 
+    /** Whether to show dimension lines */
+    public showDimensions: boolean = true;
+
+    /** Dimension renderer instance */
+    private dimensionRenderer: DimensionRenderer;
+
     /** */
-    constructor(private floorplan: Model.Floorplan, private viewmodel: Floorplanner, private canvas: string) {
+    constructor(private floorplan: Model.Floorplan, private viewmodel: Floorplanner, private canvas: string, private model?: Model.Model) {
       this.canvasElement = <HTMLCanvasElement>document.getElementById(canvas);
       this.context = this.canvasElement.getContext('2d');
+
+      // Initialize dimension renderer
+      this.dimensionRenderer = new DimensionRenderer(this.context, this.viewmodel, {
+        offset: 60,
+        lineColor: '#333333',
+        textColor: '#000000'
+      });
 
       var scope = this;
       $(window).resize(() => {
         scope.handleWindowResize();
       });
       this.handleWindowResize();
+    }
+
+    /** Get items from the scene */
+    private getItems() {
+      try {
+        if (this.model && this.model.scene) {
+          return this.model.scene.getItems();
+        }
+      } catch (e) {
+        console.warn('Could not get items:', e);
+      }
+      return [];
     }
 
     /** */
@@ -93,6 +126,12 @@ module BP3D.Floorplanner {
         this.drawCorner(corner);
       });
 
+      // Draw items (furniture)
+      var items = this.getItems();
+      items.forEach((item) => {
+        this.drawItem(item);
+      });
+
       if (this.viewmodel.mode == floorplannerModes.DRAW) {
         this.drawTarget(this.viewmodel.targetX, this.viewmodel.targetY, this.viewmodel.lastNode);
       }
@@ -104,17 +143,14 @@ module BP3D.Floorplanner {
 
     /** */
     private drawWallLabels(wall: Model.Wall) {
-      // we'll just draw the shorter label... idk
-      if (wall.backEdge && wall.frontEdge) {
-        if (wall.backEdge.interiorDistance < wall.frontEdge.interiorDistance) {
-          this.drawEdgeLabel(wall.backEdge);
-        } else {
-          this.drawEdgeLabel(wall.frontEdge);
-        }
-      } else if (wall.backEdge) {
-        this.drawEdgeLabel(wall.backEdge);
-      } else if (wall.frontEdge) {
-        this.drawEdgeLabel(wall.frontEdge);
+      if (!this.showDimensions) return;
+      
+      // Use dimension renderer for both edges
+      if (wall.frontEdge) {
+        this.dimensionRenderer.drawEdgeDimension(wall.frontEdge);
+      }
+      if (wall.backEdge) {
+        this.dimensionRenderer.drawEdgeDimension(wall.backEdge);
       }
     }
 
@@ -135,35 +171,12 @@ module BP3D.Floorplanner {
         hover ? wallWidthHover : wallWidth,
         color
       );
-      if (!hover && wall.frontEdge) {
+      if (wall.frontEdge) {
         this.drawEdge(wall.frontEdge, hover);
       }
-      if (!hover && wall.backEdge) {
+      if (wall.backEdge) {
         this.drawEdge(wall.backEdge, hover);
       }
-    }
-
-    /** */
-    private drawEdgeLabel(edge: Model.HalfEdge) {
-      var pos = edge.interiorCenter();
-      var length = edge.interiorDistance();
-      if (length < 60) {
-        // dont draw labels on walls this short
-        return;
-      }
-      this.context.font = "normal 12px Arial";
-      this.context.fillStyle = "#000000";
-      this.context.textBaseline = "middle";
-      this.context.textAlign = "center";
-      this.context.strokeStyle = "#ffffff";
-      this.context.lineWidth = 4;
-
-      this.context.strokeText(Core.Dimensioning.cmToMeasure(length),
-        this.viewmodel.convertX(pos.x),
-        this.viewmodel.convertY(pos.y));
-      this.context.fillText(Core.Dimensioning.cmToMeasure(length),
-        this.viewmodel.convertX(pos.x),
-        this.viewmodel.convertY(pos.y));
     }
 
     /** */
@@ -244,6 +257,83 @@ module BP3D.Floorplanner {
       }
     }
 
+    /** Draw an item (furniture) */
+    private drawItem(item: any) {
+      try {
+        // Get item position in 3D space
+        var pos = item.position;
+        if (!pos) return;
+
+        // Check if this item is active
+        var isActive = (item === this.viewmodel.activeItem);
+
+        // Convert 3D position to 2D canvas coordinates
+        var x = this.viewmodel.convertX(pos.x);
+        var y = this.viewmodel.convertY(pos.z);
+
+        // Get item bounding box or use default size
+        var halfSizeX = 15; // default size in pixels
+        var halfSizeZ = 15;
+        if (item.halfSize) {
+          // Get the correct scale factor from the floorplanner
+          var pixelsPerCm = this.viewmodel.getPixelsPerCm();
+          // Calculate half-size in pixels using the proper scale
+          // item.halfSize is in cm, multiply by pixelsPerCm to get pixels
+          halfSizeX = item.halfSize.x * pixelsPerCm;
+          halfSizeZ = item.halfSize.z * pixelsPerCm;
+        }
+
+        // Draw item as a rectangle with rotation
+        this.context.save();
+        this.context.translate(x, y);
+        
+        // Apply rotation if item has one
+        if (item.rotation && item.rotation.y) {
+          this.context.rotate(-item.rotation.y); // negative because canvas Y is inverted
+        }
+
+        // Draw filled rectangle with semi-transparency
+        this.context.fillStyle = isActive ? "#008cba" : itemColor;
+        this.context.globalAlpha = isActive ? 0.8 : 0.7;
+        this.context.fillRect(-halfSizeX, -halfSizeZ, halfSizeX * 2, halfSizeZ * 2);
+        this.context.globalAlpha = 1.0;
+
+        // Draw border
+        this.context.strokeStyle = itemBorderColor;
+        this.context.lineWidth = itemBorderWidth;
+        this.context.strokeRect(-halfSizeX, -halfSizeZ, halfSizeX * 2, halfSizeZ * 2);
+
+        // Draw direction indicator (small line showing front)
+        this.context.strokeStyle = "#ffffff";
+        this.context.lineWidth = 3;
+        this.context.beginPath();
+        this.context.moveTo(0, 0);
+        this.context.lineTo(0, -halfSizeZ);
+        this.context.stroke();
+
+        // Draw item name if available
+        if (item.metadata && item.metadata.itemName) {
+          this.context.fillStyle = "#ffffff";
+          this.context.font = "12px Arial";
+          this.context.textAlign = "center";
+          this.context.textBaseline = "middle";
+          
+          // Draw text background for better readability
+          var textWidth = this.context.measureText(item.metadata.itemName).width;
+          this.context.fillStyle = "rgba(0, 0, 0, 0.7)";
+          this.context.fillRect(-textWidth / 2 - 4, -8, textWidth + 8, 16);
+          
+          // Draw text
+          this.context.fillStyle = "#ffffff";
+          this.context.fillText(item.metadata.itemName, 0, 0);
+        }
+
+        this.context.restore();
+      } catch (e) {
+        console.warn('Error drawing item:', e);
+      }
+    }
+
     /** */
     private drawLine(startX: number, startY: number, endX: number, endY: number, width: number, color) {
       // width is an integer
@@ -253,6 +343,8 @@ module BP3D.Floorplanner {
       this.context.lineTo(endX, endY);
       this.context.lineWidth = width;
       this.context.strokeStyle = color;
+      this.context.lineCap = "round";  // Smooth circular ends at corners
+      this.context.lineJoin = "round"; // Smooth joins at corners
       this.context.stroke();
     }
 
@@ -274,6 +366,8 @@ module BP3D.Floorplanner {
       if (stroke) {
         this.context.lineWidth = strokeWidth;
         this.context.strokeStyle = strokeColor;
+        this.context.lineJoin = "round";  // Smooth rounded corners
+        this.context.lineCap = "round";   // Smooth line ends
         this.context.stroke();
       }
     }

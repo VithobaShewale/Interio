@@ -1,0 +1,163 @@
+{
+  "common": {
+    "app_name": "Blueprint3D",
+    "save": "Speichern",
+    "load": "Laden",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "apply": "Anwenden",
+    "reset": "Zurücksetzen",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "new": "Neu",
+    "open": "Öffnen",
+    "settings": "Einstellungen",
+    "help": "Hilfe",
+    "login": "Anmelden"
+  },
+  "toolbar": {
+    "new_design": "Neues Design",
+    "save_design": "Design Speichern",
+    "load_design": "Design Laden",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "view_2d": "2D-Ansicht",
+    "view_3d": "3D-Ansicht",
+    "view_wall": "Wandansicht",
+    "design_notes": "Designnotizen",
+    "design_assistance": "Design-Assistent"
+  },
+  "sidebar": {
+    "items": "Elemente",
+    "properties": "Eigenschaften",
+    "catalog": "Katalog",
+    "selected": "Ausgewählt",
+    "floorPlan": "Grundriss",
+    "autoDesign": "Messungen",
+    "view": "Ansicht"
+  },
+  "floorplanner": {
+    "title": "Grundrissplaner",
+    "mode_move": "Verschieben",
+    "mode_draw": "Zeichnen",
+    "mode_delete": "Löschen",
+    "draw_walls": "Wände Zeichnen",
+    "move_walls": "Wände Verschieben",
+    "move_items": "Elemente Verschieben",
+    "delete_walls": "Wände Löschen",
+    "toggle_dimensions": "Abmessungen Umschalten",
+    "show_dimensions": "Abmessungen Anzeigen",
+    "hide_dimensions": "Abmessungen Ausblenden",
+    "draw_hint": "Drücken Sie \"ESC\", um das Zeichnen von Wänden zu beenden",
+    "zoom_in": "Vergrößern",
+    "zoom_out": "Verkleinern",
+    "reset_view": "Ansicht Zurücksetzen",
+    "pan_up": "Nach Oben Schwenken",
+    "pan_down": "Nach Unten Schwenken",
+    "pan_left": "Nach Links Schwenken",
+    "pan_right": "Nach Rechts Schwenken",
+    "camera": "Kamera"
+  },
+  "viewer": {
+    "help": "Hilfe",
+    "wall_view": "Wandansicht",
+    "exit_wall_view": "Wandansicht Verlassen",
+    "view_wall_elevations": "Wandansichten Anzeigen"
+  },
+  "properties": {
+    "wall": {
+      "title": "Wandverkleidungen",
+      "no_selection": "Keine Wand ausgewählt",
+      "no_selection_hint": "Klicken Sie auf eine Wand in der 3D-Ansicht, um ihre Textur zu ändern",
+      "covering_type": "Verkleidungstyp",
+      "types": {
+        "wallpaper": "Tapete",
+        "paint": "Farbe",
+        "tile": "Fliese"
+      }
+    },
+    "floor": {
+      "title": "Bodenbeläge",
+      "no_selection": "Kein Boden ausgewählt",
+      "no_selection_hint": "Klicken Sie auf einen Boden in der 3D-Ansicht, um seine Textur zu ändern",
+      "covering_type": "Belagstyp",
+      "types": {
+        "hardwood": "Hartholz",
+        "laminate": "Laminat",
+        "tile": "Fliese",
+        "carpet": "Teppich"
+      }
+    }
+  },
+  "catalog": {
+    "title": "Möbelkatalog",
+    "search": "Elemente suchen..."
+  },
+  "import_export": {
+    "title": "Design Importieren/Exportieren",
+    "new_hint": "Mit einem leeren Raum beginnen",
+    "import": {
+      "title": "Design Importieren",
+      "button": "Importieren",
+      "hint": "Ein Design aus einer JSON-Datei laden",
+      "success": "Design erfolgreich importiert",
+      "error": "Fehler beim Importieren des Designs"
+    },
+    "export": {
+      "title": "Design Exportieren",
+      "button": "Exportieren",
+      "copy_button": "In Zwischenablage Kopieren",
+      "download_button": "JSON Herunterladen",
+      "download_glb_button": "3D-Modell Herunterladen (GLB)",
+      "hint": "Speichern Sie Ihr Design als JSON oder 3D-Modell",
+      "glb_hint": "Als GLB exportieren für andere 3D-Anwendungen",
+      "success": "Design in Zwischenablage kopiert",
+      "error": "Fehler beim Exportieren des Designs",
+      "glb_success": "3D-Modell erfolgreich exportiert",
+      "glb_error": "Fehler beim Exportieren des 3D-Modells"
+    }
+  },
+  "measurements": {
+    "title": "Messungen",
+    "clickFirstPoint": "Klicken Sie auf den ersten Punkt, um mit dem Messen zu beginnen",
+    "clickSecondPoint": "Klicken Sie auf den zweiten Punkt, um die Messung abzuschließen",
+    "measurementCount_one": "Messung",
+    "measurementCount_other": "Messungen",
+    "clearAll": "Alles Löschen",
+    "room": "Raum",
+    "areaCalculation": "Flächenberechnung",
+    "metric": "Metrisch",
+    "imperial": "Imperial",
+    "refresh": "Messungen Aktualisieren",
+    "noRooms": "Keine Räume verfügbar. Zeichnen Sie Wände, um Räume zu erstellen.",
+    "floorArea": "Bodenfläche",
+    "perimeter": "Umfang",
+    "wallArea": "Wandfläche",
+    "totals": "Summen",
+    "totalFloorArea": "Gesamtbodenfläche",
+    "totalWallArea": "Gesamtwandfläche",
+    "exportCSV": "CSV Exportieren",
+    "exportJSON": "JSON Exportieren",
+    "distance": "Entfernung",
+    "measureTool": "Messwerkzeug",
+    "activateMeasure": "Klicken Sie, um Entfernungen zu messen",
+    "wallLength": "Wandlänge",
+    "roomName": "Raumname",
+    "hoverForDetails": "Bewegen Sie die Maus für Details"
+  },
+  "messages": {
+    "design_saved": "Design erfolgreich gespeichert",
+    "design_loaded": "Design erfolgreich geladen",
+    "item_added": "Element zur Szene hinzugefügt",
+    "item_deleted": "Element aus Szene gelöscht",
+    "error_loading": "Fehler beim Laden des Designs",
+    "error_saving": "Fehler beim Speichern des Designs",
+    "confirm_delete": "Sind Sie sicher, dass Sie dieses Element löschen möchten?",
+    "confirm_new": "Neues Design erstellen? Nicht gespeicherte Änderungen gehen verloren.",
+    "unsaved_changes": "Sie haben ungespeicherte Änderungen"
+  }
+}

@@ -58,21 +58,25 @@ module BP3D.Items {
         return false;
       }
 
-      // check if we are outside all other objects
-      /*
+      // check if we are outside all other objects (collision detection)
       if (this.obstructFloorMoves) {
-          var objects = this.model.items.getItems();
+          var objects = this.model.scene.getItems();
           for (var i = 0; i < objects.length; i++) {
-              if (objects[i] === this || !objects[i].obstructFloorMoves) {
+              if (objects[i] === this) {
                   continue;
               }
-              if (!utils.polygonOutsidePolygon(corners, objects[i].getCorners('x', 'z')) ||
-                  utils.polygonPolygonIntersect(corners, objects[i].getCorners('x', 'z'))) {
-                  //console.log('object not outside other objects');
+              // Check if the other object obstructs floor moves (skip in-wall items)
+              if (objects[i].getObstructFloorMoves && !objects[i].getObstructFloorMoves()) {
+                  continue;
+              }
+              var otherCorners = objects[i].getCorners('x', 'z', objects[i].position);
+              if (!Core.Utils.polygonOutsidePolygon(corners, otherCorners, vec3.x, vec3.z) ||
+                  Core.Utils.polygonPolygonIntersect(corners, otherCorners)) {
+                  //console.log('object collides with another object');
                   return false;
               }
           }
-      }*/
+      }
 
       return true;
     }

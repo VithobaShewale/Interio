@@ -1,0 +1,163 @@
+{
+  "common": {
+    "app_name": "Blueprint3D",
+    "save": "Enregistrer",
+    "load": "Charger",
+    "export": "Exporter",
+    "import": "Importer",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "apply": "Appliquer",
+    "reset": "Réinitialiser",
+    "undo": "Annuler",
+    "redo": "Refaire",
+    "new": "Nouveau",
+    "open": "Ouvrir",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "login": "Connexion"
+  },
+  "toolbar": {
+    "new_design": "Nouveau Design",
+    "save_design": "Enregistrer le Design",
+    "load_design": "Charger le Design",
+    "undo": "Annuler",
+    "redo": "Refaire",
+    "view_2d": "Vue 2D",
+    "view_3d": "Vue 3D",
+    "view_wall": "Vue Mur",
+    "design_notes": "Notes de Conception",
+    "design_assistance": "Assistance à la Conception"
+  },
+  "sidebar": {
+    "items": "Éléments",
+    "properties": "Propriétés",
+    "catalog": "Catalogue",
+    "selected": "Sélectionné",
+    "floorPlan": "Plan d'Étage",
+    "autoDesign": "Mesures",
+    "view": "Vue"
+  },
+  "floorplanner": {
+    "title": "Planificateur d'Étage",
+    "mode_move": "Déplacer",
+    "mode_draw": "Dessiner",
+    "mode_delete": "Supprimer",
+    "draw_walls": "Dessiner des Murs",
+    "move_walls": "Déplacer les Murs",
+    "move_items": "Déplacer des Éléments",
+    "delete_walls": "Supprimer des Murs",
+    "toggle_dimensions": "Basculer les Dimensions",
+    "show_dimensions": "Afficher les Dimensions",
+    "hide_dimensions": "Masquer les Dimensions",
+    "draw_hint": "Appuyez sur \"ESC\" pour arrêter de dessiner des murs",
+    "zoom_in": "Zoom Avant",
+    "zoom_out": "Zoom Arrière",
+    "reset_view": "Réinitialiser la Vue",
+    "pan_up": "Déplacer Vers le Haut",
+    "pan_down": "Déplacer Vers le Bas",
+    "pan_left": "Déplacer à Gauche",
+    "pan_right": "Déplacer à Droite",
+    "camera": "Caméra"
+  },
+  "viewer": {
+    "help": "Aide",
+    "wall_view": "Vue de Mur",
+    "exit_wall_view": "Quitter la Vue de Mur",
+    "view_wall_elevations": "Voir les Élévations de Mur"
+  },
+  "properties": {
+    "wall": {
+      "title": "Revêtements Muraux",
+      "no_selection": "Aucun mur sélectionné",
+      "no_selection_hint": "Cliquez sur un mur dans la vue 3D pour changer sa texture",
+      "covering_type": "Type de Revêtement",
+      "types": {
+        "wallpaper": "Papier Peint",
+        "paint": "Peinture",
+        "tile": "Carrelage"
+      }
+    },
+    "floor": {
+      "title": "Revêtements de Sol",
+      "no_selection": "Aucun sol sélectionné",
+      "no_selection_hint": "Cliquez sur un sol dans la vue 3D pour changer sa texture",
+      "covering_type": "Type de Revêtement",
+      "types": {
+        "hardwood": "Bois Franc",
+        "laminate": "Stratifié",
+        "tile": "Carrelage",
+        "carpet": "Tapis"
+      }
+    }
+  },
+  "catalog": {
+    "title": "Catalogue de Meubles",
+    "search": "Rechercher des éléments..."
+  },
+  "import_export": {
+    "title": "Importer/Exporter le Design",
+    "new_hint": "Commencer avec une pièce vide",
+    "import": {
+      "title": "Importer le Design",
+      "button": "Importer",
+      "hint": "Charger un design depuis un fichier JSON",
+      "success": "Design importé avec succès",
+      "error": "Échec de l'importation du design"
+    },
+    "export": {
+      "title": "Exporter le Design",
+      "button": "Exporter",
+      "copy_button": "Copier dans le Presse-papiers",
+      "download_button": "Télécharger JSON",
+      "download_glb_button": "Télécharger Modèle 3D (GLB)",
+      "hint": "Enregistrer votre design en JSON ou modèle 3D",
+      "glb_hint": "Exporter en GLB pour utiliser dans d'autres applications 3D",
+      "success": "Design copié dans le presse-papiers",
+      "error": "Échec de l'exportation du design",
+      "glb_success": "Modèle 3D exporté avec succès",
+      "glb_error": "Échec de l'exportation du modèle 3D"
+    }
+  },
+  "measurements": {
+    "title": "Mesures",
+    "clickFirstPoint": "Cliquez sur le premier point pour commencer à mesurer",
+    "clickSecondPoint": "Cliquez sur le deuxième point pour terminer la mesure",
+    "measurementCount_one": "mesure",
+    "measurementCount_other": "mesures",
+    "clearAll": "Tout Effacer",
+    "room": "Pièce",
+    "areaCalculation": "Calcul de Surface",
+    "metric": "Métrique",
+    "imperial": "Impérial",
+    "refresh": "Actualiser les Mesures",
+    "noRooms": "Aucune pièce disponible. Dessinez des murs pour créer des pièces.",
+    "floorArea": "Surface au Sol",
+    "perimeter": "Périmètre",
+    "wallArea": "Surface de Mur",
+    "totals": "Totaux",
+    "totalFloorArea": "Surface Totale au Sol",
+    "totalWallArea": "Surface Totale de Mur",
+    "exportCSV": "Exporter CSV",
+    "exportJSON": "Exporter JSON",
+    "distance": "Distance",
+    "measureTool": "Outil de Mesure",
+    "activateMeasure": "Cliquez pour mesurer les distances",
+    "wallLength": "Longueur de Mur",
+    "roomName": "Nom de Pièce",
+    "hoverForDetails": "Survoler pour détails"
+  },
+  "messages": {
+    "design_saved": "Design enregistré avec succès",
+    "design_loaded": "Design chargé avec succès",
+    "item_added": "Élément ajouté à la scène",
+    "item_deleted": "Élément supprimé de la scène",
+    "error_loading": "Erreur lors du chargement du design",
+    "error_saving": "Erreur lors de l'enregistrement du design",
+    "confirm_delete": "Êtes-vous sûr de vouloir supprimer cet élément?",
+    "confirm_new": "Créer un nouveau design? Les modifications non enregistrées seront perdues.",
+    "unsaved_changes": "Vous avez des modifications non enregistrées"
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint3D React Migration</title>
+</head>
+<body>
+    <h1>Blueprint3D React Migration Guide</h1>
+    
+    <h2>Setup Instructions</h2>
+    <ol>
+        <li>Navigate to the react-app directory:
+            <pre>cd react-app</pre>
+        </li>
+        <li>Install dependencies:
+            <pre>npm install</pre>
+        </li>
+        <li>Copy Blueprint3D build files:
+            <pre>
+# Copy the compiled Blueprint3D library
+Copy-Item ..\dist\blueprint3d.js public\blueprint3d.js
+
+# Copy assets (models, textures, etc.)
+Copy-Item -Recurse ..\example\models public\models
+Copy-Item -Recurse ..\example\rooms public\rooms
+            </pre>
+        </li>
+        <li>Start the development server:
+            <pre>npm start</pre>
+        </li>
+    </ol>
+
+    <h2>Project Structure</h2>
+    <ul>
+        <li><strong>src/App.tsx</strong> - Main application component</li>
+        <li><strong>src/hooks/useBlueprint3D.ts</strong> - Custom hook for Blueprint3D integration</li>
+        <li><strong>src/components/FloorPlanner.tsx</strong> - 2D floor plan editor component</li>
+        <li><strong>src/components/ThreeViewer.tsx</strong> - 3D viewer component</li>
+        <li><strong>src/components/Toolbar.tsx</strong> - Top toolbar with view mode toggle</li>
+        <li><strong>src/components/Sidebar.tsx</strong> - Item and texture selection sidebar</li>
+    </ul>
+
+    <h2>Features</h2>
+    <ul>
+        <li>✅ React + TypeScript setup</li>
+        <li>✅ 2D/3D view toggle</li>
+        <li>✅ Modern UI with gradient toolbar</li>
+        <li>✅ Sidebar for items and textures</li>
+        <li>✅ Save/Load functionality</li>
+        <li>✅ Responsive layout</li>
+        <li>✅ Blueprint3D integration via custom hook</li>
+    </ul>
+
+    <h2>Next Steps</h2>
+    <ul>
+        <li>Install dependencies and copy assets</li>
+        <li>Enhance drag-and-drop functionality</li>
+        <li>Add more furniture items</li>
+        <li>Implement texture selection for walls/floors</li>
+        <li>Add undo/redo functionality</li>
+        <li>Integrate camera controls</li>
+    </ul>
+</body>
+</html>

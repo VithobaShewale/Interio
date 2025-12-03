@@ -7,7 +7,8 @@ module.exports = function (grunt) {
     sources: ["src/*.ts", "src/*/*.ts"],
     outDir: "dist",
     docDir: "doc",
-    exampleDir: "example/js/"
+    exampleDir: "example/js/",
+    reactPublicDir: "react-app/public/"
   };
 
   var configuration = {
@@ -18,6 +19,11 @@ module.exports = function (grunt) {
   configuration.copy[globalConfig.moduleName] = {
     src: globalConfig.outDir + "/" + globalConfig.moduleName + ".js",
     dest: globalConfig.exampleDir + "/" + globalConfig.moduleName + ".js"
+  };
+
+  configuration.copy.reactPublic = {
+    src: globalConfig.outDir + "/" + globalConfig.moduleName + ".js",
+    dest: globalConfig.reactPublicDir + "/" + globalConfig.moduleName + ".js"
   };
 
   configuration.copy.threejs = {
@@ -66,6 +72,17 @@ module.exports = function (grunt) {
   }
   configuration.uglify[globalConfig.moduleName].files["dist/" + globalConfig.moduleName + ".min.js"] = globalConfig.outDir + "/" + globalConfig.moduleName +".js";
 
+  configuration.watch = {
+    typescript: {
+      files: globalConfig.sources,
+      tasks: ["typescript:" + globalConfig.moduleName, "copy:" + globalConfig.moduleName, "copy:reactPublic"],
+      options: {
+        spawn: false,
+        livereload: true
+      }
+    }
+  };
+
   grunt.initConfig(configuration);
 
   grunt.registerTask("debug", [
@@ -74,7 +91,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask("example", [
     "copy:threejs",
-    "copy:" + globalConfig.moduleName
+    "copy:" + globalConfig.moduleName,
+    "copy:reactPublic"
+  ]);
+
+  grunt.registerTask("dev", [
+    "debug",
+    "example",
+    "watch"
   ]);
 
   grunt.registerTask("release", [

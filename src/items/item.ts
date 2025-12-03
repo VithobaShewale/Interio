@@ -154,6 +154,11 @@ module BP3D.Items {
     }
 
     /** */
+    public getObstructFloorMoves = function () {
+      return this.obstructFloorMoves;
+    }
+
+    /** */
     public abstract placeInRoom();
 
     /** */

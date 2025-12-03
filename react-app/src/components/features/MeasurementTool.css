@@ -1,0 +1,196 @@
+.measurement-tool-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.measurement-canvas {
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.measurement-toolbar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.measurement-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.measurement-mode-indicator {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.measurement-count {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.measurement-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.measurement-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.measurement-btn.clear-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.measurement-btn.clear-btn:hover {
+  background: #fecaca;
+}
+
+.measurement-btn.close-btn {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.measurement-btn.close-btn:hover {
+  background: #e5e7eb;
+}
+
+.measurement-list {
+  position: absolute;
+  top: 140px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.measurement-list h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.measurement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.measurement-item:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.measurement-distance {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dc2626;
+  font-family: 'Courier New', monospace;
+}
+
+.measurement-item:hover .measurement-distance {
+  color: #2563eb;
+}
+
+.delete-measurement-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.delete-measurement-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Scrollbar styling */
+.measurement-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.measurement-list::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 3px;
+}
+
+.measurement-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.measurement-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Animation for new measurements */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.measurement-item {
+  animation: fadeInScale 0.2s ease-out;
+}

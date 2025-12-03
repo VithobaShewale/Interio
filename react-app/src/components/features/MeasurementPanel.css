@@ -1,0 +1,145 @@
+.measurement-panel {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.measurement-header {
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.measurement-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.unit-btn {
+  padding: 4px 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.unit-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.unit-btn.active {
+  background: white;
+  color: #667eea;
+}
+
+.measurement-content {
+  padding: 16px;
+}
+
+.measurement-section {
+  margin-bottom: 20px;
+}
+
+.measurement-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.measurement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  transition: all 0.2s;
+}
+
+.measurement-item:hover {
+  background: #f3f4f6;
+}
+
+.measurement-item:last-child {
+  margin-bottom: 0;
+}
+
+.measurement-item .label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.measurement-item .value {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.wall-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.wall-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wall-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.wall-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.wall-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.measurement-info {
+  margin-top: 16px;
+  padding: 12px;
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  border-radius: 6px;
+}
+
+.measurement-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.measurement-info strong {
+  font-weight: 600;
+}

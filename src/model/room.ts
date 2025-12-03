@@ -115,6 +115,19 @@ module BP3D.Model {
       }
     }
 
+    /** Calculate room area in square centimeters */
+    public getArea(): number {
+      // Use shoelace formula to calculate polygon area
+      var area = 0;
+      var corners = this.corners;
+      for (var i = 0; i < corners.length; i++) {
+        var j = (i + 1) % corners.length;
+        area += corners[i].x * corners[j].y;
+        area -= corners[j].x * corners[i].y;
+      }
+      return Math.abs(area / 2);
+    }
+
     /** 
      * Populates each wall's half edge relating to this room
      * this creates a fancy doubly connected edge list (DCEL)
