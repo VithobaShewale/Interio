@@ -1,0 +1,169 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter r181"
+  },
+  "scenes": [
+    {
+      "name": "AuxScene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "cb-blue-block-60x96",
+      "mesh": 0
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 288,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 288,
+      "byteLength": 288,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 576,
+      "byteLength": 192,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 768,
+      "byteLength": 72,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 840,
+      "uri": "data:application/octet-stream;base64,ZmaYwqgAgL4K1/PCZmaYwrD+f74K1/NCZmaYwqgAgD4K1/NCZmaYwrD+fz4K1/PCZmaYwrD+fz4K1/PCZmaYQrD+fz4K1/PCZmaYQqgAgL4K1/PCZmaYwqgAgL4K1/PCZmaYQrD+fz4K1/PCZmaYQqgAgD4K1/NCZmaYQrD+f74K1/NCZmaYQqgAgL4K1/PCZmaYwrD+f74K1/NCZmaYQrD+f74K1/NCZmaYQqgAgD4K1/NCZmaYwqgAgD4K1/NCZmaYwrD+f74K1/NCZmaYwqgAgL4K1/PCZmaYQqgAgL4K1/PCZmaYQrD+f74K1/NCZmaYQqgAgD4K1/NCZmaYQrD+fz4K1/PCZmaYwrD+fz4K1/PCZmaYwqgAgD4K1/NCJc0TvyXNE78lzRO/Jc0TvyXNE78lzRM/Jc0TvyXNEz8lzRM/Jc0TvyXNEz8lzRO/Jc0TvyXNEz8lzRO/Jc0TPyXNEz8lzRO/Jc0TPyXNE78lzRO/Jc0TvyXNE78lzRO/Jc0TPyXNEz8lzRO/Jc0TPyXNEz8lzRM/Jc0TPyXNE78lzRM/Jc0TPyXNE78lzRO/Jc0TvyXNE78lzRM/Jc0TPyXNE78lzRM/Jc0TPyXNEz8lzRM/Jc0TvyXNEz8lzRM/Jc0TvyXNE78lzRM/Jc0TvyXNE78lzRO/Jc0TPyXNE78lzRO/Jc0TPyXNE78lzRM/Jc0TPyXNEz8lzRM/Jc0TPyXNEz8lzRO/Jc0TvyXNEz8lzRO/Jc0TvyXNEz8lzRM/vTcGtr03Bja9NwY2EQCAPwAAgD/e/38/3v9/PwAAAAAAAIA/3v9/P97/fz8AAAAAvTcGtr03Bja9NwY2EQCAPwAAgD/e/38/3v9/PwAAAAC9Nwa2vTcGNr03BjYRAIA/vTcGtr03Bja9NwY2EQCAPwAAgD/e/38/3v9/PwAAAAAAAIA/3v9/P97/fz8AAAAAvTcGtr03Bja9NwY2EQCAPwAAgD/e/38/3v9/PwAAAAC9Nwa2vTcGNr03BjYRAIA/AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        76.19999694824219,
+        0.25000500679016113,
+        121.91999816894531
+      ],
+      "min": [
+        -76.19999694824219,
+        -0.25000500679016113,
+        -121.91999816894531
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        0.5773490071296692,
+        0.5773490071296692,
+        0.5773490071296692
+      ],
+      "min": [
+        -0.5773490071296692,
+        -0.5773490071296692,
+        -0.5773490071296692
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        1,
+        1.0000020265579224
+      ],
+      "min": [
+        -0.0000019999999949504854,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 36,
+      "max": [
+        23
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 1,
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "name": "bake_mat.013"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "uri": "b_cb-blue-block60x96.png"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

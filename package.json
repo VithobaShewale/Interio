@@ -37,7 +37,7 @@
   },
   "scripts": {
     "build": "browserify src/blueprint3d.js > example/js/blueprint3d.js --verbose",
-    "convert-models": "node convert-models.js"
+    "convert-models": "node convert-models.mjs"
   },
   "author": ""
 }

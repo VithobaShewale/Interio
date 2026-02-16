@@ -1,0 +1,169 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter r181"
+  },
+  "scenes": [
+    {
+      "name": "AuxScene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "nyc-poster2",
+      "mesh": 0
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 288,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 288,
+      "byteLength": 288,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 576,
+      "byteLength": 192,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 768,
+      "byteLength": 72,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 840,
+      "uri": "data:application/octet-stream;base64,AADgQTJVLkJ3vjnAAADgQc6qAcKcvznAAADgwc6qAcKcvznAAADgwU1VLkJ3vjnAAADgQTJVLkLGi22/AADgwTJVLkLGi22/AADgwbOqAcJLkG2/AADgQc6qAcJLkG2/AADgQTJVLkJ3vjnAAADgQTJVLkLGi22/AADgQc6qAcJLkG2/AADgQc6qAcKcvznAAADgQc6qAcKcvznAAADgQc6qAcJLkG2/AADgwbOqAcJLkG2/AADgwc6qAcKcvznAAADgwc6qAcKcvznAAADgwbOqAcJLkG2/AADgwTJVLkLGi22/AADgwU1VLkJ3vjnAAADgQTJVLkLGi22/AADgQTJVLkJ3vjnAAADgwU1VLkJ3vjnAAADgwTJVLkLGi22/LssTPyXNEz8uyxO/Jc0TPy7LE78lzRO/LssTvyXNE78lzRO/LssTvyXNEz8uyxO/Jc0TPy7LEz8lzRM/Jc0Tvy7LEz8lzRM/Jc0TvyXNE78uyxM/LssTPyXNE78uyxM/LssTPyXNEz8uyxO/Jc0TPy7LEz8lzRM/LssTPyXNE78uyxM/Jc0TPy7LE78lzRO/Jc0TPy7LE78lzRO/LssTPyXNE78uyxM/Jc0TvyXNE78uyxM/LssTvyXNE78lzRO/LssTvyXNE78lzRO/Jc0TvyXNE78uyxM/Jc0Tvy7LEz8lzRM/LssTvyXNEz8uyxO/Jc0TPy7LEz8lzRM/LssTPyXNEz8uyxO/LssTvyXNEz8uyxO/Jc0Tvy7LEz8lzRM/at1+P1uYhTtq3X4/z/R+PxZLkTvP9H4/FkuRO1uYhTvFyH4/xOqPO4CdmzvE6o87gJ2bOyrgfj/FyH4/O+B+P2rdfj9bmIU7xch+P8TqjzvFyH4/O+B+P2rdfj/P9H4/at1+P8/0fj/FyH4/O+B+P4Cdmzsq4H4/FkuRO8/0fj8WS5E7z/R+P4Cdmzsq4H4/gJ2bO8TqjzsWS5E7W5iFO8XIfj/E6o87at1+P1uYhTsWS5E7W5iFO4CdmzvE6o87AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        28,
+        43.58330154418945,
+        -0.927914023399353
+      ],
+      "min": [
+        -28,
+        -32.41680145263672,
+        -2.90231990814209
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        0.5773490071296692,
+        0.5773490071296692,
+        0.5773490071296692
+      ],
+      "min": [
+        -0.5773490071296692,
+        -0.5773490071296692,
+        -0.5773490071296692
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        0.9955660104751587,
+        0.9959229826927185
+      ],
+      "min": [
+        0.004433999769389629,
+        0.004077000077813864
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 36,
+      "max": [
+        23
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "name": "nyc2"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "uri": "nyc2.jpg"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}
